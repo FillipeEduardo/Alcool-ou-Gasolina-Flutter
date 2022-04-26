@@ -1,6 +1,6 @@
+import 'package:aog/widgets/input.widget.dart';
 import 'package:aog/widgets/logo.widget.dart';
 import 'package:flutter/material.dart';
-import 'package:extended_masked_text/extended_masked_text.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,15 +17,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
 
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
-  final _gasCtrl = MoneyMaskedTextController();
-  final _gasCtrl2 = MoneyMaskedTextController();
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,71 +32,26 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           const Logo(),
-          Row(
-            children: <Widget>[
-              Container(
-                width: 100,
-                alignment: Alignment.centerRight,
-                child:const Text(
-                  "Gasolina",
-                  style: TextStyle(
-                    fontFamily: "Big Shoulders Display",
-                    fontSize: 40,
-                    color: Colors.white,
-                  ),
+          Input("Gasolina"),
+          Input("Álcool"),
+          Container(
+            margin: const EdgeInsets.all(30),
+            height: 60,
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(0.8),
+              borderRadius: BorderRadius.circular(60),
+            ),
+            child: TextButton(
+              onPressed: () {},
+              child: const Text(
+                "CALCULAR",
+                style: TextStyle(
+                  color: Colors.deepPurple,
+                  fontFamily: "Big Shoulders Display",
+                  fontSize: 25,
                 ),
               ),
-              const SizedBox(
-                width: 20,
-              ),
-              Expanded(
-                child: TextFormField(
-                  controller: _gasCtrl,
-                  keyboardType: TextInputType.number,
-                  style: const TextStyle(
-                    fontFamily: "Big Shoulders Display",
-                    color: Colors.white,
-                    fontSize: 40,
-                  ),
-                  decoration: const InputDecoration(
-                    border: InputBorder.none,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Row(
-            children: <Widget>[
-              Container(
-                width: 100,
-                alignment: Alignment.centerRight,
-                child:const Text(
-                  "Alcool",
-                  style: TextStyle(
-                    fontFamily: "Big Shoulders Display",
-                    fontSize: 40,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                width: 20,
-              ),
-              Expanded(
-                child: TextFormField(
-                  controller: _gasCtrl2,
-                  keyboardType: TextInputType.number,
-                  style: const TextStyle(
-                    fontFamily: "Big Shoulders Display",
-                    color: Colors.white,
-                    fontSize: 40,
-                  ),
-                  decoration: const InputDecoration(
-                    border: InputBorder.none,
-                  ),
-                ),
-              ),
-            ],
+            ),
           ),
         ],
       ),

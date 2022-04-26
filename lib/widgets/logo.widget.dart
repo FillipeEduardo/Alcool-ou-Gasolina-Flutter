@@ -18,7 +18,7 @@ class Logo extends StatelessWidget {
              height: 30,
           ),
           const Text(
-            "Alcool ou Gasolina",
+            "Álcool ou Gasolina",
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.white,

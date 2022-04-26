@@ -1,3 +1,4 @@
+import 'package:aog/widgets/logo.widget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
 
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepPurple,
       ),
       home: const HomePage(),
     );
@@ -27,8 +28,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      
+    return Scaffold(
+      backgroundColor: Colors.deepPurple,
+      body: ListView(
+        children: <Widget> [
+        Logo(),
+        ],
+      ),
     );
   }
 }

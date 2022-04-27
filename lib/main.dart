@@ -1,6 +1,5 @@
-import 'dart:html';
-
 import 'package:aog/widgets/input.widget.dart';
+import 'package:aog/widgets/loading-button.widget.dart';
 import 'package:aog/widgets/logo.widget.dart';
 import 'package:flutter/material.dart';
 
@@ -61,23 +60,11 @@ class HomePage extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
-                Container(
-                  height: 50,
-                  width: 300,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(60),
-                    color: Colors.white,
-                  ),
-                  child: TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    "CALCULAR NOVAMENTE",
-                    style: TextStyle(
-                      fontFamily: "Big Shoulders Display",
-                      fontSize: 20
-                    ),
-                  ),
-                ),
+                LoadingButton(
+                  false,
+                  false,
+                  () {},
+                  "CALCULAR NOVAMENTE",
                 ),
                 const SizedBox(
                   height: 30,
@@ -87,24 +74,11 @@ class HomePage extends StatelessWidget {
           ),
           Input("Gasolina"),
           Input("Álcool"),
-          Container(
-            margin: const EdgeInsets.all(30),
-            height: 60,
-            decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.8),
-              borderRadius: BorderRadius.circular(60),
-            ),
-            child: TextButton(
-              onPressed: () {},
-              child: const Text(
-                "CALCULAR",
-                style: TextStyle(
-                  color: Colors.deepPurple,
-                  fontFamily: "Big Shoulders Display",
-                  fontSize: 25,
-                ),
-              ),
-            ),
+          LoadingButton(
+            false,
+            false,
+            () {},
+            "CALCULAR",
           ),
         ],
       ),

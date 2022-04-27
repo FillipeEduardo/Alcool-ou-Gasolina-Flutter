@@ -8,14 +8,14 @@ class Logo extends StatelessWidget {
     return Column(
       children: <Widget> [
         const SizedBox(
-            height: 60,
+            height: 40,
           ),
           Image.asset(
             "assets/images/aog-white.png",
             height: 120,
           ),
            const SizedBox(
-             height: 30,
+             height: 20,
           ),
           const Text(
             "Álcool ou Gasolina",

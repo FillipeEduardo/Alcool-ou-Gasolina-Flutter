@@ -7,19 +7,19 @@ class LoadingButton extends StatelessWidget {
   late Function func;
   var text = "";
 
-  LoadingButton(this.busy, this.invert, this.func, this.text);
+  LoadingButton({required this.busy, required this.invert, required this.func, required this.text});
 
   @override
   Widget build(BuildContext context) {
-    return busy? Container(
+    return busy
+    ? Container(
       alignment: Alignment.center,
       height: 50,
-      child: CircularProgressIndicator(
+      child:const CircularProgressIndicator(
         color: Colors.white,
       ),
     )
-    :
-    Container(
+    : Container(
       height: 50,
       width: 500,
       margin: const EdgeInsets.fromLTRB(100, 20, 100, 20),

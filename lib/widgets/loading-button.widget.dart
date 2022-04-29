@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class LoadingButton extends StatelessWidget {
   var busy = false;
   var invert = false;
-  late Function func;
+  VoidCallback func;
   var text = "";
 
   LoadingButton({required this.busy, required this.invert, required this.func, required this.text});
@@ -28,7 +28,7 @@ class LoadingButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(60),
       ),
       child: TextButton(
-        onPressed: () {},
+        onPressed: func,
         child: Text(
           text,
           style: TextStyle(

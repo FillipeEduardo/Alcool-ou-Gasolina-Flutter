@@ -3,7 +3,7 @@ import 'loading-button.widget.dart';
 
 class Success extends StatelessWidget {
   var result = "";
-  late Function reset;
+  VoidCallback reset;
   Success ({required this.result, required this.reset});
 
   @override

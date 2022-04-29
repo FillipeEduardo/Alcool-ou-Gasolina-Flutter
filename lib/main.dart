@@ -1,8 +1,4 @@
-import 'package:aog/widgets/input.widget.dart';
-import 'package:aog/widgets/loading-button.widget.dart';
-import 'package:aog/widgets/logo.widget.dart';
-import 'package:aog/widgets/submit-form.widget.dart';
-import 'package:aog/widgets/success.widget.dart';
+import 'package:aog/pages/home.page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,28 +16,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: const HomePage(),
+      home: HomePage(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.deepPurple,
-      body: ListView(
-        children: <Widget>[
-          const Logo(),
-          Success(
-            reset: (){ },
-            result: "Compensa utilizar x",
-            ),
-          SubmitForm(busy: false, submitFunction: (){})
-        ],
-      ),
-    );
-  }
-}

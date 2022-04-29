@@ -4,11 +4,16 @@ import 'input.widget.dart';
 import 'loading-button.widget.dart';
 
 class SubmitForm extends StatelessWidget {
-
+  var gasCtrl = MoneyMaskedTextController();
+  var alcCtrl = MoneyMaskedTextController();
   var busy = false;
-  late Function submitFunction;
+  VoidCallback submitFunction;
 
-  SubmitForm({ required this.busy, required this.submitFunction});
+  SubmitForm({
+    required this.busy,
+    required this.submitFunction,
+    required this.gasCtrl,
+    required this.alcCtrl});
 
   @override
   Widget build(BuildContext context) {
@@ -19,17 +24,22 @@ class SubmitForm extends StatelessWidget {
             left: 60,
             right: 60,
             ),
-            child: Input("Gasolina"),
+            child: Input(
+              label: "Gasolina",
+              controller: gasCtrl),
             ),
         Padding(
           padding:const EdgeInsets.only(
             left: 60,
             right: 60,
             ),
-            child: Input("Álcool"),
+            child: Input(
+              controller: alcCtrl,
+              label: "Álcool",
+            ),
             ),
           LoadingButton(
-            busy: false,
+            busy: busy,
             invert: false,
             func: submitFunction,
             text: "CALCULAR",

@@ -2,10 +2,13 @@ import 'package:extended_masked_text/extended_masked_text.dart';
 import 'package:flutter/material.dart';
 
 class Input extends StatelessWidget {
-  final controller = MoneyMaskedTextController();
+  var controller = MoneyMaskedTextController();
   var label = "";
 
-  Input(this.label, {Key? key}) : super(key: key);
+  Input({
+    required this.controller,
+    required this.label,
+  });
   
   @override
   Widget build(BuildContext context) {

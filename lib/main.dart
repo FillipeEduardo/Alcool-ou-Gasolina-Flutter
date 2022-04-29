@@ -1,6 +1,7 @@
 import 'package:aog/widgets/input.widget.dart';
 import 'package:aog/widgets/loading-button.widget.dart';
 import 'package:aog/widgets/logo.widget.dart';
+import 'package:aog/widgets/submit-form.widget.dart';
 import 'package:aog/widgets/success.widget.dart';
 import 'package:flutter/material.dart';
 
@@ -38,14 +39,7 @@ class HomePage extends StatelessWidget {
             reset: (){ },
             result: "Compensa utilizar x",
             ),
-          Input("Gasolina"),
-          Input("Álcool"),
-          LoadingButton(
-            busy: false,
-            invert: false,
-            func: (){},
-            text: "CALCULAR",
-          ),
+          SubmitForm(busy: false, submitFunction: (){})
         ],
       ),
     );
